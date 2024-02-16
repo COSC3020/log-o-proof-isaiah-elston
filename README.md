@@ -48,7 +48,8 @@ $$\begin{align*}
 \\
 \implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(2)}) \iff \exists c, n_0: \mathrm{T}(n) \leq c \cdot \frac{\log(n)}{\log(2)} \forall n \geq n_0
  \\
-\implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(2)}) \iff \exists c, n_0: \mathrm{T}(n) \leq \frac{1}{\log(2)} \cdot \log(n) \forall n \geq n_0 \\
+\implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(2)}) \iff \exists c, n_0: \mathrm{T}(n) \leq c \cdot \frac{1}{\log(2)} \cdot \log(n) \forall n \geq n_0 \\
+\implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(2)}) \iff \exists c, n_0: \mathrm{T}(n) \leq \frac{c}{\log(2)} \cdot \log(n) \forall n \geq n_0 \\
 && \blacksquare \notag
 \end{align*}
 $$
@@ -61,7 +62,8 @@ $$
 \\
 \implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(5)}) \iff \exists c, n_0: \mathrm{T}(n) \leq c \cdot \frac{\log(n)}{\log(5)} \forall n \geq n_0
  \\
-\implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(5)}) \iff \exists c, n_0: \mathrm{T}(n) \leq \frac{1}{\log(5)} \cdot \log(n) \forall n \geq n_0 \\
+\implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(5)}) \iff \exists c, n_0: \mathrm{T}(n) \leq c \cdot \frac{1}{\log(5)} \cdot \log(n) \forall n \geq n_0 \\
+\implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(5)}) \iff \exists c, n_0: \mathrm{T}(n) \leq \frac{c}{\log(5)} \cdot \log(n) \forall n \geq n_0 \\
 && \blacksquare \notag
 \end{align*}
 $$
@@ -74,9 +76,16 @@ $$
 \\
 \implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(b)}) \iff \exists c, n_0: \mathrm{T}(n) \leq c \cdot \frac{\log(n)}{\log(b)} \forall n \geq n_0
  \\
-\implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(b)}) \iff \exists c, n_0: \mathrm{T}(n) \leq \frac{1}{\log(b)} \cdot \log(n) \forall n \geq n_0 \\
+\implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(b)}) \iff \exists c, n_0: \mathrm{T}(n) \leq c \cdot \frac{1}{\log(b)} \cdot \log(n) \forall n \geq n_0 \\
+\implies & \mathrm{T}(n) \in \mathrm{O}(\frac{\log(n)}{\log(b)}) \iff \exists c, n_0: \mathrm{T}(n) \leq \frac{c}{\log(b)} \cdot \log(n) \forall n \geq n_0 \\
 && \blacksquare \notag
 \end{align*}
 $$
 
-We can see that any base of a logarithmic function can be represented as a product to satisfy the $\exists c$ quantifier within the definition of $\mathrm{O}$. In doing so, it will always be a lower order term than the remaining $\log(n)$ term and thus be rendered insignificant on an asymptotic scale. 
+We can see that any base of a logarithmic function can be represented as a product to satisfy the $\exists c$ quantifier within the definition of $\mathrm{O}$. More specifically, $\frac{c}{\log(b)}$ will **always** be a constant term because $c$ and $b$ are both constant terms as well. Considering that, we can see that $\log(n)$ will always grow more substantially than $\frac{c}{\log(n)}$ which renders $\frac{c}{\log(n)}$ impertinent when evaluating asymptotic bounds. 
+
+$$
+\mathrm{T}(n) \leq \frac{c}{\log(2)} \cdot \log(n) \implies \mathrm{T}(n) \in \mathrm{O}(\log(n)) \\
+\mathrm{T}(n) \leq \frac{c}{\log(5)} \cdot \log(n) \implies \mathrm{T}(n) \in \mathrm{O}(\log(n)) \\
+\therefore \mathrm{O}(\log_{2}(n)) \equiv \mathrm{O}(\log_{5}(n))
+$$
