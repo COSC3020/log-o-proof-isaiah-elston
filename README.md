@@ -34,19 +34,21 @@ $$
 Finally, we can consider the specific examples that we are interested in proving:
 
 $$
-\log_{2}(n) = \frac{\log(n)}{\log(2)} 
-\\ ~ \\
+\log_{2}(n) = \frac{\log(n)}{\log(2)}
+$$
+
+$$
 \log_{5}(n) = \frac{\log(n)}{\log(5)}
 $$
 
 It may already be apparent at this point how $\mathrm{O}(\log_{2}(n)) \equiv \mathrm{O}(\log_{5}(n))$, but for the sake of rigor I will further decompose the two logarithmic functions.
 
-$$\begin{align*}
-\frac{\log(n)}{\log(2)} 
-\equiv \frac{1}{\log(2)} \text{ } \times \text{ } \log(n) \\~\\
-\frac{\log(n)}{\log(5)} 
-\equiv \frac{1}{\log(5)} \text{ } \times \text{ } \log(n)
-\end{align*}
+$$
+\frac{\log(n)}{\log(2)} \equiv \frac{1}{\log(2)} \text{ } \times \text{ } \log(n)
+$$
+
+$$
+\frac{\log(n)}{\log(5)} \equiv \frac{1}{\log(5)} \text{ } \times \text{ } \log(n)
 $$
 
 In both cases, we can see that the highest order term is the logarithmic variable $\log(n)$. 
@@ -56,8 +58,12 @@ $n$ grows faster than $5$.
 
 $$
 \log(n) \text{ } \times \text{ } \frac{1}{\log(2)} \in \mathrm{O}(\log(n))
-\\ ~ \\
+$$
+
+$$
 \log(n) \text{ } \times \text{ } \frac{1}{\log(5)} \in \mathrm{O}(\log(n))
-\\ ~ \\
+$$
+
+$$
 \therefore \mathrm{O}(\log_{2}(n)) \equiv \mathrm{O}(\log_{5}(n)) \equiv \mathrm{O}(\log(n))
 $$
