@@ -84,8 +84,11 @@ $$
 
 We can see that any base of a logarithmic function can be represented as a product to satisfy the $\exists c$ quantifier within the definition of $\mathrm{O}$. More specifically, $\frac{c}{\log(b)}$ will **always** be a constant term because $c$ and $b$ are both constant terms as well. Considering that, we can see that $\log(n)$ will always grow more substantially than $\frac{c}{\log(n)}$ which renders $\frac{c}{\log(n)}$ impertinent when evaluating asymptotic bounds. 
 
-$$
-\mathrm{T}(n) \leq \frac{c}{\log(2)} \cdot \log(n) \implies \mathrm{T}(n) \in \mathrm{O}(\log(n)) \\
-\mathrm{T}(n) \leq \frac{c}{\log(5)} \cdot \log(n) \implies \mathrm{T}(n) \in \mathrm{O}(\log(n)) \\
-\therefore \mathrm{O}(\log_{2}(n)) \equiv \mathrm{O}(\log_{5}(n))
+$$\begin{align*}
+\mathrm{T}(n) \leq \frac{c}{\log(2)} \cdot \log(n) & \implies \mathrm{T}(n) \in \mathrm{O}(\log(n)) 
+\\
+\mathrm{T}(n) \leq \frac{c}{\log(5)} \cdot \log(n) & \implies \mathrm{T}(n) \in \mathrm{O}(\log(n)) 
+\\
+\therefore \mathrm{O}(\log_{2}(n)) & \equiv \mathrm{O}(\log_{5}(n))
+\end{align*}
 $$
